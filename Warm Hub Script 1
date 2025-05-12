@@ -60,7 +60,7 @@ buttonCorner.CornerRadius = UDim.new(0, 10)
 buttonCorner.Parent = copyButton
 
 -- Link and clipboard logic
-local discordLink = "https://discord.gg/YOURINVITECODE" -- Replace this
+local discordLink = "https://dsc.gg/getwarm" -- Replace this
 
 copyButton.MouseButton1Click:Connect(function()
     setclipboard(discordLink)
