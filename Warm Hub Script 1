@@ -1,0 +1,46 @@
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+-- Create GUI elements
+local screenGui = Instance.new("ScreenGui", player:WaitForChild("PlayerGui"))
+screenGui.Name = "DiscordLinkGui"
+
+local instructionLabel = Instance.new("TextLabel")
+instructionLabel.Parent = screenGui
+instructionLabel.Size = UDim2.new(1, 0, 0, 50)
+instructionLabel.Position = UDim2.new(0, 0, 0, 0)
+instructionLabel.BackgroundTransparency = 1
+instructionLabel.Text = "Copy the Discord link and paste it in your browser for scripts and executor."
+instructionLabel.TextColor3 = Color3.new(1, 1, 1)
+instructionLabel.TextScaled = true
+instructionLabel.Font = Enum.Font.SourceSansBold
+
+local titleLabel = Instance.new("TextLabel")
+titleLabel.Parent = screenGui
+titleLabel.Size = UDim2.new(1, 0, 0, 60)
+titleLabel.Position = UDim2.new(0, 0, 0.15, 0)
+titleLabel.BackgroundTransparency = 1
+titleLabel.Text = "Warm 🔥"
+titleLabel.TextColor3 = Color3.fromRGB(255, 140, 0)
+titleLabel.TextScaled = true
+titleLabel.Font = Enum.Font.GothamBold
+
+local copyButton = Instance.new("TextButton")
+copyButton.Parent = screenGui
+copyButton.Size = UDim2.new(0.5, 0, 0, 50)
+copyButton.Position = UDim2.new(0.25, 0, 0.4, 0)
+copyButton.BackgroundColor3 = Color3.fromRGB(255, 221, 0)
+copyButton.Text = "Copy Discord Link"
+copyButton.TextColor3 = Color3.new(0, 0, 0)
+copyButton.TextScaled = true
+copyButton.Font = Enum.Font.GothamBold
+copyButton.BorderSizePixel = 0
+
+local discordLink = "dsc.gg/getwarm" -- Replace with your real invite
+
+copyButton.MouseButton1Click:Connect(function()
+    setclipboard(discordLink)
+    copyButton.Text = "Copied!"
+    wait(1.5)
+    copyButton.Text = "Copy Discord Link"
+end)
